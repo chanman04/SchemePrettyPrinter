@@ -51,8 +51,20 @@ public class Scheme4101
 
 
         Tree.Environment env = new Tree.Environment(); // create built-in environment
-        Ident id = new Ident("car");
-        env.define(id, new BuiltIn(id));
+        Ident id;
+        string[] builtins = new string[] { "symbol?", "number?", "b+", "b-", "b*", "b/",
+                                           "b=", "b<", "car", "cdr", "cons", "set-car!",
+                                           "set-cdr!", "null?", "pair?", "eq?", "procedure?",
+                                           "read", "write", "display", "newline", "eval",
+                                           "apply", "interaction-environment" };
+
+        foreach (string function in builtins)
+        {
+            id = new Ident(function);
+            env.define(id, new BuiltIn(id));
+        }
+        //Ident id= new Ident("car");
+        //env.define(id, new BuiltIn(id));
         // ... populate the built-in environment
         env = new Tree.Environment(env); // create top-level environment
 
