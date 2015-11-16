@@ -21,12 +21,12 @@ namespace Tree
             Environment local = new Environment(env);
             args = t.getCdr().getCar();
             exp = t.getCdr().getCdr().getCar();
-            args = eval_body(args, local);
+            args = evalBody(args, local);
             return exp.eval(local);
         }
 
         //added
-        public Node eval_body(Node t, Environment env)
+        public Node evalBody(Node t, Environment env)
         {
             if (t == null || t.isNull())
             {
@@ -43,7 +43,7 @@ namespace Tree
                 if (arg.isSymbol())
                 {
                     env.define(arg, exp.eval(env));
-                    return eval_body(rest, env);
+                    return evalBody(rest, env);
                 }
                 else if (arg.isPair())
                 {

@@ -95,13 +95,7 @@ namespace Tree
             return true;
         }
 
-        //added
-        public Cons(Nil nil1, Nil nil2)
-        {
-            this.nil1 = nil1;
-            this.nil2 = nil2;
-        }
-
+       
         //added
         public override Node eval(Environment env)
         {

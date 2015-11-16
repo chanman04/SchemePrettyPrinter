@@ -50,23 +50,21 @@ public class Scheme4101
         Node root;
 
 
-        Tree.Environment env = new Tree.Environment(); // create built-in environment
+        Tree.Environment env = new Tree.Environment(); 
         Ident id;
-        string[] builtins = new string[] { "symbol?", "number?", "b+", "b-", "b*", "b/",
+        string[] definitions = new string[] { "symbol?", "number?", "b+", "b-", "b*", "b/",
                                            "b=", "b<", "car", "cdr", "cons", "set-car!",
                                            "set-cdr!", "null?", "pair?", "eq?", "procedure?",
                                            "read", "write", "display", "newline", "eval",
                                            "apply", "interaction-environment" };
 
-        foreach (string function in builtins)
+        foreach (string function in definitions)
         {
             id = new Ident(function);
             env.define(id, new BuiltIn(id));
         }
-        //Ident id= new Ident("car");
-        //env.define(id, new BuiltIn(id));
-        // ... populate the built-in environment
-        env = new Tree.Environment(env); // create top-level environment
+     
+        env = new Tree.Environment(env); 
 
         // TODO: Create and populate the built-in environment and
         // create the top-level environment
@@ -87,8 +85,7 @@ public class Scheme4101
             {
                 Console.WriteLine("Environment not defined");
             }
-            //root.print(0);
-            //root = (Node) parser.parseExp();
+     
         }
 
         return 0;

@@ -1,4 +1,4 @@
-// Regular -- Parse tree node strategy for printing regular lists
+ // Regular -- Parse tree node strategy for printing regular lists
 
 using System;
 
@@ -21,7 +21,7 @@ namespace Tree
             Node args;
 
             first = t.getCar();
-            args = eval_list(t.getCdr(), env);
+            args = evalNode(t.getCdr(), env);
 
             while (first.isSymbol())
             {
@@ -44,7 +44,8 @@ namespace Tree
         }
 
         //added
-        public Node eval_list(Node t, Environment env)
+        
+        public Node evalNode(Node t, Environment env)
         {
             if (t == null || t.isNull())
             {
@@ -65,9 +66,10 @@ namespace Tree
                 {
                     return null;
                 }
-                Node list = new Cons(arg1.eval(env), eval_list(rest, env));
+                Node list = new Cons(arg1.eval(env), evalNode(rest, env));
                 return list;
             }
+            
         }
     }
 }
