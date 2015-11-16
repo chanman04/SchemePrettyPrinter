@@ -39,5 +39,11 @@ namespace Tree
         {
             return boolVal;
         }
+
+        //added
+        public override Node eval(Environment env)
+        {
+            return this;
+        }
     }
 }

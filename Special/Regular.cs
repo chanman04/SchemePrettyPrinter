@@ -8,42 +8,10 @@ namespace Tree
     {
         public Regular() { }
 
-        //public override void print(Node t, int n, bool p)
-        //{
-        //    Printer.printRegular(t, n, p);
-        //}
-
         //added
         public override void print(Node t, int n, bool p)
         {
-            // Printer.printRegular(t, n, p);
-            if (Environment.errorMessages.Count == 0)
-            {
-                Printer.printQuote(t, n, true);
-                //Console.Write(")");
-                //Console.WriteLine();
-            }
-            else
-            {
-                String newErr = "";
-
-                while (Environment.errorMessages != null)
-                {
-                    for (int i = 0; i < Environment.errorMessages.Count; i++)
-                    {
-                        string s = Environment.errorMessages[i];
-                        string tmp = s;
-                        if (!tmp.Equals(newErr))
-                        {
-                            Console.WriteLine(s);
-                        }
-                        else
-                        {
-                            newErr = tmp;
-                        }
-                    }
-                }
-            }
+            Printer.printRegular(t, n, p);
         }
 
         //added

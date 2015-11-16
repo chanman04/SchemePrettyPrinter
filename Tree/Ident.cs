@@ -47,8 +47,6 @@ namespace Tree
                     if (Environment.errorMessages.Count == 0)
                     {
                         Printer.printQuote(args, 0, true);
-                        Console.Write(")");
-                        Console.WriteLine();
                     }
                     else
                     {

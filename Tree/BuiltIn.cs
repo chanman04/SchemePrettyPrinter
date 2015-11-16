@@ -55,10 +55,6 @@ namespace Tree
         // TODO: The method apply() should be defined in class Node
         // to report an er  ror.  It should be overridden only in classes
         // BuiltIn and Closure.
-        //public /* override */ Node apply (Node args)
-        //{
-        //    return new StringLit("Error: BuiltIn.apply not yet implemented");
-        //}
 
         //added
         public override Node apply(Node args)
@@ -291,7 +287,6 @@ namespace Tree
                 Scanner scanner = new Scanner(Console.In);
                 TreeBuilder builder = new TreeBuilder();
                 Parser parser;
-                //parser = new Parser(new Scanner(System.in));
                 parser = new Parser(scanner, builder);
                 Node a = (Node)parser.parseExp();
                 return a;
@@ -302,7 +297,6 @@ namespace Tree
             }
             else
             {
-                // use "write" by default
                 arg1.print(0);
                 return new Nil();
             }
